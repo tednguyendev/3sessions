@@ -1,0 +1,10 @@
+<svg width="240" height="240" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded background -->
+  <rect x="0" y="0" width="240" height="240" rx="48" ry="48" fill="#334155"/>
+  <!-- Bars: medium, tall, short -->
+  <rect x="62" y="95" width="28" height="40" rx="6" ry="6" fill="#fbbf24"/>
+  <rect x="106" y="80" width="28" height="55" rx="6" ry="6" fill="#fbbf24"/>
+  <rect x="150" y="110" width="28" height="25" rx="6" ry="6" fill="#fbbf24"/>
+  <!-- Text -->
+  <text x="120" y="175" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="bold" fill="white">3sessions</text>
+</svg>
