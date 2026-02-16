@@ -3,18 +3,16 @@ set -e
 
 INSTALL_DIR="$HOME/.3sessions"
 PLUGIN_DIR="$HOME/Library/Application Support/SwiftBar/Plugins"
+BASE_URL="https://raw.githubusercontent.com/tednguyendev/3sessions/main/plugin"
 
-# Clone or update
-if [ -d "$INSTALL_DIR" ]; then
-  echo "Updating 3sessions..."
-  cd "$INSTALL_DIR" && git pull
-else
-  echo "Installing 3sessions..."
-  git clone https://github.com/tednguyendev/3sessions.git "$INSTALL_DIR"
-fi
-
-# Symlink plugin
+mkdir -p "$INSTALL_DIR"
 mkdir -p "$PLUGIN_DIR"
-ln -sf "$INSTALL_DIR/plugin/3sessions.1m.sh" "$PLUGIN_DIR/3sessions.1m.sh"
+
+echo "Installing 3sessions..."
+curl -sL "$BASE_URL/3sessions.1m.sh" -o "$INSTALL_DIR/3sessions.1m.sh"
+curl -sL "$BASE_URL/write.sh" -o "$INSTALL_DIR/write.sh"
+chmod +x "$INSTALL_DIR/3sessions.1m.sh" "$INSTALL_DIR/write.sh"
+
+ln -sf "$INSTALL_DIR/3sessions.1m.sh" "$PLUGIN_DIR/3sessions.1m.sh"
 
 echo "Done! Start SwiftBar if it's not running: open -a SwiftBar"
